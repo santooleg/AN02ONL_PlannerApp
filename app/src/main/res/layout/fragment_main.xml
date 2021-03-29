@@ -4,8 +4,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@color/purple_200"
-	android:requiresFadingEdge="horizontal">
+	android:background="@color/purple_200">
 
 	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/toolbar"
@@ -18,59 +17,48 @@
 		app:title="Planner App"
 		app:titleTextColor="@color/white" />
 
-	<LinearLayout
-		android:id="@+id/linearLayout"
-		android:layout_width="match_parent"
-		android:layout_height="58dp"
-		android:layout_marginTop="8dp"
-		android:background="@color/purple_200"
-		android:orientation="horizontal"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-
-		<EditText
-			android:id="@+id/editText"
-			android:layout_width="304dp"
-			android:layout_height="match_parent"
-			android:layout_margin="5dp"
-			android:background="@color/white"
-			android:ems="10"
-			android:gravity="center"
-			android:importantForAutofill="no"
-			android:inputType="text"
-			android:text="@string/edit_text" />
-
-
-		<Button
-			android:id="@+id/button3"
-			style="@style/Widget.AppCompat.Button"
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:layout_margin="5dp"
-			android:background="@color/purple_500"
-			android:backgroundTint="@color/white"
-			android:text="@string/send" />
-
-	</LinearLayout>
 
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/recyclerView"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
-		android:layout_marginTop="8dp"
 		android:clipToPadding="false"
 		app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintBottom_toTopOf="@+id/editText"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="1.0"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+		app:layout_constraintTop_toBottomOf="@+id/toolbar"
 		app:spanCount="2"
-		tools:listitem="@layout/note_list_item">
+		tools:ignore="NotSibling"
+		tools:listitem="@layout/note_list_item"/>
 
-	</androidx.recyclerview.widget.RecyclerView>
+	<Button
+		android:id="@+id/buttonEditText"
+		android:layout_width="wrap_content"
+		android:layout_height="70dp"
+		android:layout_margin="4dp"
+		android:text="@string/send"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
 
+
+	<EditText
+		android:id="@+id/editText"
+		android:layout_width="match_parent"
+		android:layout_height="72dp"
+		android:layout_margin="4dp"
+		android:background="@color/white_1"
+		android:ems="10"
+		android:hint="@string/edit_text"
+		android:inputType="text"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/buttonEditText"
+		android:importantForAutofill="no"
+		android:fontFamily="sans-serif-medium"
+		android:gravity="center"
+		android:textColor="@color/black"
+		android:textSize="16sp"
+		android:textStyle="bold"
+	/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
     <string name="welcome">Welcome</string>
     <string name="click_me">Click Me</string>
 	<string name="click_me_2">Sum of two clicks</string>
-	<string name="edit_text">Edit text</string>
+	<string name="edit_text">New text</string>
 	<string name="send">Send</string>
 	<string name="hint">hint</string>
 </resources>
