@@ -1,14 +1,13 @@
 package io.techmeskills.an02onl_plannerapp.screen.main
 
+import androidx.lifecycle.MutableLiveData
 import io.techmeskills.an02onl_plannerapp.support.CoroutineViewModel
+import kotlinx.coroutines.launch
 
 class MainViewModel : CoroutineViewModel() {
-    fun addNewNote(text: String) {
-        val note = Note(text, null)
-        notes.add(0, note)
-    }
 
-    val notes = mutableListOf(
+    val notesLiveData = MutableLiveData<List<Note>>(
+        listOf(
             Note("Помыть посуду"),
             Note("Забрать пальто из химчистки", "23.03.2021"),
             Note("Позвонить Ибрагиму"),
@@ -19,14 +18,23 @@ class MainViewModel : CoroutineViewModel() {
             Note("Выбить ковры перед весной"),
             Note("Заклеить сапог жене"),
             Note("Купить картошки"),
-            Note("Скачать кино в самолёт", "25.03.2021"),
-            Note("Сделать домашнее зание", "25.03.2021")
+            Note("Скачать кино в самолёт", "25.03.2021")
+        )
     )
+
+    fun addNote(text: String, date: String? = null) {
+        launch {
+            val list = notesLiveData.value!!.toMutableList()
+            list.add(0, Note(text, date))
+            notesLiveData.postValue(list)
+        }
+    }
 }
 
 class Note(
-        var title: String,
-        var date: String? = null
+    val title: String,
+    val date: String? = null
 )
+
 
 
