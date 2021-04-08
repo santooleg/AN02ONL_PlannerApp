@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import io.techmeskills.an02onl_plannerapp.R
 
 class NotesRecyclerViewAdapter(private val items: List<Note>) :
-        RecyclerView.Adapter<NoteViewHolder>() {
+    RecyclerView.Adapter<NoteViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         return NoteViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.note_list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.note_list_item, parent, false)
         )
     }
+
+
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         holder.bind(items[position])
@@ -29,7 +31,7 @@ class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
     private val tvDate = itemView.findViewById<TextView>(R.id.tvDate)
 
-    fun bind(item: Note){
+    fun bind(item: Note) {
         tvTitle.text = item.title
         tvDate.text = item.date
 
