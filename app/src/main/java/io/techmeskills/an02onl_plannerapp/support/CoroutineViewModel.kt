@@ -19,4 +19,6 @@ abstract class CoroutineViewModel : ViewModel(), CoroutineScope {
         super.onCleared()
         viewModelJob.cancel()
     }
+
+
 }

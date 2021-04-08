@@ -29,6 +29,14 @@ class MainViewModel : CoroutineViewModel() {
             notesLiveData.postValue(list)
         }
     }
+
+    fun editNote(position: Int, text: String, date: String? = null) {
+        launch {
+            val list = notesLiveData.value!!.toMutableList()
+            list.set(position, Note(text, date))
+            notesLiveData.postValue(list)
+        }
+    }
 }
 
 class Note(
