@@ -58,10 +58,7 @@ class MainFragment : NavigationFragment<FragmentMainBinding>(R.layout.fragment_m
                     //Toast.makeText(activity, "$position item clicked!", Toast.LENGTH_LONG).show()
                 }
             }))
-
-
     }
-
 
     override fun onInsetsReceived(top: Int, bottom: Int, hasKeyboard: Boolean) {
         viewBinding.toolbar.setPadding(0, top, 0, 0)
@@ -75,5 +72,4 @@ class MainFragment : NavigationFragment<FragmentMainBinding>(R.layout.fragment_m
                 findNavController().popBackStack()
             }
         }
-
 }
