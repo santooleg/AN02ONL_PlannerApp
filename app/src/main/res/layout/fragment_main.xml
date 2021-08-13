@@ -8,14 +8,14 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/white"
+        android:background="@android:color/holo_orange_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Planner App"
+        app:title="@string/planner_app"
         app:titleTextColor="@color/black">
 
         <ImageView
